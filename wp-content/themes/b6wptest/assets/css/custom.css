@@ -1,0 +1,249 @@
+html {
+    font-family: 'Inter', sans-serif;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+}
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+p {
+    font-size: 20px;
+    font-weight: 400;;
+}
+.container {
+    padding: 20px
+}
+
+/* Header */
+
+.site-header {
+    display: flex;
+    height: 80px;
+    align-items: center;    
+}
+.site-branding, .main-navigation {
+    display: flex;
+    align-items: center;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    transition: all ease 1s;
+}
+.menu li {
+    list-style: none;
+    margin: 0px 10px;
+    transition: all ease .8s;    
+}
+.menu li a {
+    text-decoration: none;
+    color: #667085;
+}
+
+.menu-right{    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.header-btn {
+    position: absolute;
+    right: 0;
+}
+.header-btn a {
+    text-decoration: none;
+    color: #667085;
+    margin-right: 15px;
+}
+.header-btn .button {
+    background-color: #7F56D9;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+/* Slider */
+.slider {
+    height: calc(100vh - 115px);
+    background-color: #6941C6;
+    display: flex;
+    align-items: center;    
+}
+
+.slider .container {
+    width: 50%;  
+}
+
+.hero-slider-content {    
+    color:#fff;     
+    text-align: start;
+    max-width: 600px;
+}
+
+.hero-slider-image {   
+    width: 60%;
+    height: 100%;   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} 
+
+/* Slider swiper lib */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+/* Menu mobile hamburger */
+label.menu-mobile{
+    display:none;
+    flex-direction:column;
+    width:50px;
+    cursor:pointer;
+    position: absolute;
+    right: 0;
+    margin-right: 25px;
+}
+label.menu-mobile span{
+    background: #101828;
+    border-radius:10px;
+    height:5px;
+    margin: 5px 0;
+    transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+}
+.menu-mobile   span:nth-of-type(1){
+    width:50%;    
+}
+.menu-mobile  span:nth-of-type(2){
+    width:100%;
+}
+.menu-mobile  span:nth-of-type(3){
+    width:75%;
+
+}
+.menu-mobile   input[type="checkbox"]{
+    display:none;
+}
+.menu-mobile   input[type="checkbox"]:checked ~ span:nth-of-type(1){
+    transform-origin:bottom;
+    transform:rotatez(45deg) translate(8px,0px)
+}
+.menu-mobile  input[type="checkbox"]:checked ~ span:nth-of-type(2){    
+    transform-origin:top;
+    transform:rotatez(-45deg)
+}
+.menu-mobile  input[type="checkbox"]:checked ~ span:nth-of-type(3){    
+    transform-origin:bottom;
+    width:50%;
+    transform: translate(21px,-8px) rotatez(45deg);
+}
+
+   
+
+@media only screen and (min-width:1440px) {
+    .container {
+        padding: 0px 100px;
+    }
+}
+
+/* Mobile breakpoint */
+
+@media only screen and (max-width:600px) {
+    p{
+        padding: 0px 20px;;
+    }
+    .slider .swiper-slide{
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+    }
+    .slider .container{
+        width: 100%;
+    }
+    .slider {
+        height: calc(100vh - 170px);
+        background-color: #6941C6;
+        display: flex;
+        align-items: center;    
+    }
+    .menu li {
+       opacity: 0;   
+       margin-bottom: 40px;    
+    }
+    
+    .menu {
+        height: 100vh;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 0%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: auto;
+        z-index: 9;
+        background: #fffffff5;
+        display: none;       
+    }
+    .menu-right{
+        position: static;
+    }
+    .header-btn {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: start;
+        margin-left: 20px;
+        display: none;
+        transition: all ease 1s; 
+        opacity: 0;       
+        z-index: 999;
+    }
+    label.menu-mobile {
+        display: flex;
+        z-index: 9999;
+    }
+    .main-navigation{
+        flex-direction: column;
+    }
+    .hero-slider-content {
+        min-width: 100%;
+        width: 100%;        
+        text-align: center;
+    }
+    .hero-slider-image {
+        width: 100%;
+        height: 50%;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+    }
+}
